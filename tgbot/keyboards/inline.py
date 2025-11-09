@@ -7,9 +7,8 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 def very_simple_keyboard():
     buttons = [
         [
-            InlineKeyboardButton(text="📝 Створити замовлення",
-                                 callback_data="create_order"),
-            InlineKeyboardButton(text="📋 Мої замовлення", callback_data="my_orders"),
+            InlineKeyboardButton(text="📝 Create Order", callback_data="create_order"),
+            InlineKeyboardButton(text="📋 My Orders", callback_data="my_orders"),
         ],
     ]
 
@@ -26,11 +25,11 @@ def simple_menu_keyboard():
 
     # You can use keyboard.button() method to add buttons, then enter text and callback_data
     keyboard.button(
-        text="📝 Створити замовлення",
+        text="📝 Create Order",
         callback_data="create_order"
     )
     keyboard.button(
-        text="📋 Мої замовлення",
+        text="📋 My Orders",
         # In this simple example, we use a string as callback_data
         callback_data="my_orders"
     )

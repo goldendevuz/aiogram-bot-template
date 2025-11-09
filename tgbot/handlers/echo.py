@@ -8,7 +8,7 @@ echo_router = Router()
 
 @echo_router.message(F.text, StateFilter(None))
 async def bot_echo(message: types.Message):
-    text = ["Ехо без стану.", "Повідомлення:", message.text]
+    text = ["Echo without state.", "Message:", message.text]
 
     await message.answer("\n".join(text))
 
@@ -17,8 +17,8 @@ async def bot_echo(message: types.Message):
 async def bot_echo_all(message: types.Message, state: FSMContext):
     state_name = await state.get_state()
     text = [
-        f"Ехо у стані {hcode(state_name)}",
-        "Зміст повідомлення:",
+        f"Echo in state {hcode(state_name)}",
+        "Message content:",
         hcode(message.text),
     ]
     await message.answer("\n".join(text))
