@@ -10,11 +10,7 @@ from aiogram.client.default import DefaultBotProperties
 from tgbot.config import load_config, Config
 from tgbot.handlers import routers_list
 from tgbot.middlewares.config import ConfigMiddleware
-from tgbot.services import broadcaster
-
-
-async def on_startup(bot: Bot, admin_ids: list[int]):
-    await broadcaster.broadcast(bot, admin_ids, "The bot has been started!")
+from tgbot.services import broadcaster, on_startup_notify, set_commands
 
 
 def register_global_middlewares(dp: Dispatcher, config: Config, session_pool=None):
@@ -97,7 +93,9 @@ async def main():
 
     register_global_middlewares(dp, config)
 
-    await on_startup(bot, config.tg_bot.admin_ids)
+    await set_commands(bot)
+    await on_startup_notify(bot, config.tg_bot.admin_ids)
+
     await dp.start_polling(bot)
 
 
