@@ -8,7 +8,7 @@ services:
     volumes:
       - .:/usr/src/app/bot
     command: python3 -m bot
-    restart: always
+    restart: unless-stopped
     env_file:
       - ".env"
 
@@ -25,7 +25,7 @@ services:
   #  image: postgres:13-alpine
   #  ports:
   #    - "5439:5432" # Change if you like! 5439 is external to container
-  #  restart: always
+  #  restart: unless-stopped
   #  volumes:
   #    - pgdata:/var/lib/postgresql/data
   #  command: "postgres -c max_connections=150
@@ -45,7 +45,7 @@ services:
   ##  To enable redis cache uncomment the following lines
   # redis_cache:
   #  image: redis:6.2-alpine
-  #  restart: always
+  #  restart: unless-stopped
   #  command: redis-server --port $REDIS_PORT --save 20 1 --loglevel warning --requirepass $REDIS_PASSWORD
   #  env_file:
   #    - ".env"
@@ -62,7 +62,7 @@ services:
   #  volumes:
   #    - .:/usr/src/app/api
   #  command: [ "uvicorn", "infrastructure.api.app:app", "--host", "0.0.0.0", "--port", "8000" ]
-  #  restart: always
+  #  restart: unless-stopped
   #  env_file:
   #    - ".env"
   #  logging:
@@ -74,7 +74,7 @@ services:
   # reverse-proxy:
   #  container_name: nginx-reverse-proxy
   #  stop_signal: SIGINT
-  #  restart: always
+  #  restart: unless-stopped
   #  image: nginx:latest
   #  ports:
   #    - '80:80'
