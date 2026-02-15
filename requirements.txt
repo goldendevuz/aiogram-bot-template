@@ -1,6 +1,6 @@
-aiogram==3.22.0
+aiogram==3.25.0
 environs==14.5.0
-redis==7.0.1
+redis==7.1.1
 betterlogging==1.0.0
 
 # # For enabling api:
