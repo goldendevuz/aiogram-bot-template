@@ -13,13 +13,7 @@ INPUT_FILE = "requirements.txt"
 OUTPUT_FILE = "requirements.lock.txt"
 
 PACKAGES_LIST = [
-    "aiofiles","aiogram","aiohappyeyeballs","aiohttp","aiosignal","alembic",
-    "annotated-types","anyio","async-timeout","asyncpg","attrs","Babel",
-    "bcrypt","certifi","click","exceptiongroup","frozenlist","greenlet",
-    "h11","idna","itsdangerous","Jinja2","magic-filter","Mako","MarkupSafe",
-    "multidict","pi","propcache","psycopg2-binary","pydantic","pydantic_core",
-    "python-dotenv","python-multipart","pytz","setuptools","sniffio",
-    "SQLAlchemy","starlette","starlette-admin","typing_extensions","uvicorn","yarl"
+    "psycopg2-binary", "python-dotenv", "uvicorn", "Django"
 ]
 
 PYPI_URL = "https://pypi.org/pypi/{}/json"
